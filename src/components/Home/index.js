@@ -14,16 +14,27 @@ class Home extends Component {
   constructor() {
     super();
 
+    this._id = 0;
+
     this.addTodo = this.addTodo.bind(this);
+    this.editTodo = this.editTodo.bind(this);
   }
 
   addTodo() {
     this.props.actions.addTodo({
+      _id: this._id,
       text: "makan"
     });
+
+    this._id = this._id + 1;
+  }
+
+  editTodo() {
+    this.props.actions.editTodo(2, 'TIDUR');
   }
 
   render() {
+    console.log(this.props)
     return (
       <View style={styles.container}>
         <Text>
@@ -31,6 +42,9 @@ class Home extends Component {
         </Text>
         <TouchableOpacity onPress={this.addTodo}>
           <Text>Tambah Todo</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.editTodo}>
+          <Text>Edit Todo</Text>
         </TouchableOpacity>
       </View>
     );

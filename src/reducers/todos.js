@@ -5,6 +5,13 @@ const todosReducer = (state = [], action) => {
     case types.ADD_TODO:
       return [...state, action.payload];
 
+    case types.EDIT_TODO:
+      return state.map((todo) => {
+        if (todo._id !== action.id) return todo;
+
+        return Object.assign({}, todo, { text: action.text })
+      });
+    
     default:
       return state;
   }

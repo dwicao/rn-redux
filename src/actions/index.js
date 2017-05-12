@@ -1,6 +1,6 @@
 import * as types from './types';
 
-export const increaseCounter = (payload) => ({
+export const addTodo = (payload) => ({
   type: types.ADD_TODO,
   payload,
 });

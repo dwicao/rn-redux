@@ -4,12 +4,13 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
+import Home from '../Home';
 
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>App App App</Text>
+        <Home />
       </View>
     );
   }

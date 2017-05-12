@@ -1,1 +1,1 @@
-export const INCREASE_COUNTER = 'INCREASE_COUNTER';
+export const ADD_TODO = 'ADD_TODO';
